@@ -31,11 +31,11 @@ function shuffle(array){
 // }
 
 function chunk (numChunks, array) {
-  var i,j,arrCopy;
-  for (i=0,j=array.length; i<j; i+=numChunks) {
-    arrCopy = array.slice(i,i+numChunks);
-    console.log(arrCopy);
+  newArr = [];
+  for (var i=0; i<array.length; i+=numChunks) {
+    newArr.push(shuffle(array).slice(i,i+numChunks));
   }
+  return newArr;
 }
 
 console.log(JSON.stringify(chunk(4, [1,2,3,4,5,6,7,8])));
